@@ -65,9 +65,10 @@ def on_epoch_end(epoch, logs):
 
 if __name__ == '__main__':
 
+    path="C:\\Users\\Vivaswan Chandru\\Box Sync\\Mayanka-Research\\2018-CrisisCNN-WordEmbedding\\Code\\Keras_ImageClassification\\data\\wikipediaData.txt"
     #path ="C:\\Users\\Vivaswan Chandru\\Box Sync\\Mayanka-Research\\2018-CrisisCNN-WordEmbedding\\Code\\Keras_ImageClassification\\data\\IAPR_text"
     #path="D:\\Mayanka Lenevo F Drive\\Datasets\\Image_with_caption\\SBM\\SBU_captioned_photo_dataset_captions.txt"
-    path = get_file('nietzsche.txt', origin='https://s3.amazonaws.com/text-datasets/nietzsche.txt')
+    #path = get_file('nietzsche.txt', origin='https://s3.amazonaws.com/text-datasets/nietzsche.txt')
     with io.open(path, encoding='utf-8') as f:
         text = f.read().lower()
     print('corpus length:', len(text))
@@ -120,5 +121,5 @@ if __name__ == '__main__':
 
     model.fit(x, y,
               batch_size=128,
-              epochs=5,
+              epochs=60,
               callbacks=[print_callback,tensorboard])
